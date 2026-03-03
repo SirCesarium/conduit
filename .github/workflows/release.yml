@@ -1,0 +1,38 @@
+name: "Publish Release"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-tauri:
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: install bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: install dependencies
+        run: bun install
+
+      - uses: tauri-apps/tauri-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v__VERSION__
+          releaseName: "Conduit v__VERSION__"
+          releaseBody: "Quick Setup and UI polish. This is a pre-release build."
+          releaseDraft: true
+          prerelease: true
