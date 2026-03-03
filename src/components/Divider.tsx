@@ -1,7 +1,7 @@
 export const Divider = (props: { className: string }) => (
   <div
     className={
-      "h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent my-8 " +
+      "h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent " +
       props.className
     }
   />
