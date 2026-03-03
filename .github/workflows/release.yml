@@ -36,3 +36,4 @@ jobs:
           releaseBody: "Quick Setup and UI polish. This is a pre-release build."
           releaseDraft: true
           prerelease: true
+          args: "--no-bundle"
