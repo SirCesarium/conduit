@@ -1,6 +1,7 @@
 import { EntityCard } from "../components/EntityCard";
 import { useNav } from "../routes";
 import { CenteredLayout } from "../layouts/CenteredLayout";
+import { Divider } from "../components/Divider";
 
 export const LandingScreen = () => {
   const { navigate } = useNav("welcome");
@@ -11,7 +12,7 @@ export const LandingScreen = () => {
         <h1 className="text-7xl font-black uppercase tracking-[0.2em] leading-none">
           CONDUIT
         </h1>
-        <div className="h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent my-8" />
+        <Divider className="mt-4" />
         <p className="text-lg text-white/20 uppercase font-bold tracking-[0.4em] mt-4">
           Create your first instance
         </p>
@@ -22,7 +23,7 @@ export const LandingScreen = () => {
           title="Guided Setup"
           subtitle="Quick step by step guide"
           icon="Sparkles"
-          onClick={() => {}}
+          onClick={() => navigate("quick_setup")}
         />
         <EntityCard
           title="Advanced Setup"

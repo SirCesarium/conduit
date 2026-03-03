@@ -1,9 +1,11 @@
 import { RouterView } from "stack-nav";
 import { Routes, useNav } from "./routes";
-import { LandingScreen } from "./screens/LandingScreen";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import { AppBar } from "./components/AppBar";
+
+import { LandingScreen } from "./screens/LandingScreen";
+import { QuickSetupScreen } from "./screens/setup/QuickSetupScreen";
 
 export const App = () => {
   const { currentScreen } = useNav();
@@ -24,6 +26,7 @@ export const App = () => {
             currentScreen={currentScreen}
             screens={{
               welcome: () => <LandingScreen />,
+              quick_setup: () => <QuickSetupScreen />,
             }}
           />
         </motion.div>
