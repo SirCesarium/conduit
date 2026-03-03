@@ -37,3 +37,4 @@ jobs:
           releaseDraft: true
           prerelease: true
           args: "--no-bundle"
+          uploadPlainBinary: true
