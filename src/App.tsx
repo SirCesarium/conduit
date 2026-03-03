@@ -6,6 +6,8 @@ import { AppBar } from "./components/AppBar";
 
 import { LandingScreen } from "./screens/LandingScreen";
 import { QuickSetupScreen } from "./screens/setup/QuickSetupScreen";
+import { VanillaSetup } from "./screens/setup/vanilla/VanillaSetup";
+import { ModsSetup } from "./screens/setup/mods/ModsSetup";
 
 export const App = () => {
   const { currentScreen } = useNav();
@@ -27,6 +29,8 @@ export const App = () => {
             screens={{
               welcome: () => <LandingScreen />,
               quick_setup: () => <QuickSetupScreen />,
+              vanilla_setup: () => <VanillaSetup />,
+              mods_setup: () => <ModsSetup />,
             }}
           />
         </motion.div>

@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { FeatureCard } from "../../components/FeatureCard";
 
 export const QuickSetupScreen = () => {
-  const { goBack } = useNav("quick_setup");
+  const { goBack, navigate } = useNav("quick_setup");
 
   return (
     <CenteredLayout className="max-w-6xl">
@@ -32,7 +32,7 @@ export const QuickSetupScreen = () => {
           subtitle="The classic experience"
           icon="Pickaxe"
           color="#bef264" // Lime
-          onClick={() => {}}
+          onClick={() => navigate("vanilla_setup")}
         />
         <FeatureCard
           title="Plugins"
@@ -46,7 +46,7 @@ export const QuickSetupScreen = () => {
           subtitle="Add new items, creatures, and adventures"
           icon="Box"
           color="#ef4444" // Red
-          onClick={() => {}}
+          onClick={() => navigate("mods_setup")}
         />
       </main>
     </CenteredLayout>
