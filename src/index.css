@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "JetBrainsMono Nerd Font";
+  src: url("/assets/jetbrains_nf.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-jetbrains: "JetBrainsMono Nerd Font", monospace;
+  --bg-main: #0A0A0B;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --bg-top-bar: rgba(255, 255, 255, 0.007);
+  --primary: #d0bcff;
+  --primary-muted: rgba(208, 188, 255, 0.3);
+  --primary-glow: rgba(208, 188, 255, 0.5);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  * {
+    font-family: var(--font-jetbrains);
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    box-shadow: none !important;
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: "liga" on, "calt" on;
+  }
+
+  body {
+    @apply bg-[#141317] text-white antialiased selection:bg-[#d0bcff] selection:text-[#1c1b1f];
+    background-color: var(--bg-main);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  button, 
+  input, 
+  textarea, 
+  select, 
+  a {
+    outline: none !important;
+    &:focus, &:active, &:focus-visible {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  button {
+    @apply cursor-pointer ring-0;
+  }
+}
