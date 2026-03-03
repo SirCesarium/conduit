@@ -1,4 +1,4 @@
-export const Divider = (props: { className: string }) => (
+export const Divider = (props: { className?: string }) => (
   <div
     className={
       "h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent " +
